@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // Merke die ursprünglich aufgerufene URL (inkl. Pfad & Query),
+      // leite sofort auf die Startseite um. React Router stellt sie gleich wieder her.
+      (function () {
+        try {
+          sessionStorage.redirect = location.pathname + location.search + location.hash;
+        } catch (e) {}
+        location.replace("/");
+      })();
+    </script>
+    <noscript>
+      Diese Seite benötigt JavaScript. <a href="/">Zur Startseite</a>.
+    </noscript>
+  </head>
+  <body></body>
+</html>
